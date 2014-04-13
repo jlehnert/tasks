@@ -1,0 +1,20 @@
+<persistence version="1.0" 
+    xmlns="http://java.sun.com/xml/ns/persistence" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    <persistence-unit name="persistence_unit">
+       <class>net.lehnert.tasks.jpa.Task</class>
+       <class>net.lehnert.tasks.jpa.Swimlane</class>
+       <properties>
+            <property name="javax.persistence.jdbc.driver" 
+                      value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" 
+                      value="jdbc:hsqldb:file:/Users/johannes/Programmieren/workspaceKepler/tasks/db/taskdb;shutdown=true"/>
+            <property name="javax.persistence.jdbc.user" value="SA"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/> <!-- or drop-and-create-tables -->
+			<property name="eclipselink.ddl-generation.output-mode" value="database"/> <!-- database oder both oder sql-script -->
+            <property name="eclipselink.target-database" value="HSQL"/>            
+        </properties>
+    </persistence-unit>
+</persistence>
